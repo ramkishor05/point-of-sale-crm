@@ -9,6 +9,7 @@ com\brijframework\crm\mapper\GenericMapper.class
 com\brijframework\crm\mapper\impl\BusinessMapperImpl.class
 com\brijframework\crm\dto\UICustomerDetail.class
 com\brijframework\crm\mapper\impl\CustomerMapperImpl.class
+com\brijframework\crm\config\WebResourceConfig.class
 com\brijframework\crm\dto\UIBusinessDetail.class
 com\brijframework\crm\mapper\CustomerDetailMapper.class
 com\brijframework\crm\service\impl\CustomerServiceImpl.class
