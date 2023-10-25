@@ -28,7 +28,7 @@ public class VendorServiceImpl implements VendorService {
 	@Override
 	public UIVendor saveVendor(UIVendor uiVendor) {
 		EOVendor eoVendor=vendorMapper.mapToDAO(uiVendor);
-		vendorRepository.save(eoVendor);
+		eoVendor=vendorRepository.save(eoVendor);
 		return vendorMapper.mapToDTO(eoVendor);
 	}
 
