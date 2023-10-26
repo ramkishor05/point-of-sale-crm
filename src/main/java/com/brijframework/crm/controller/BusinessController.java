@@ -1,6 +1,6 @@
 package com.brijframework.crm.controller;
 
-import static com.brijframework.crm.contants.Constants.VENDOR_APP_ID;
+import static com.brijframework.crm.contants.Constants.OWNER_ID;
 
 import java.util.List;
 
@@ -27,17 +27,17 @@ public class BusinessController {
 	BusinessService businessService;
 	
 	@PostMapping
-	public UIBusiness addBusiness(@RequestHeader(VENDOR_APP_ID) long vendorId, @RequestBody UIBusiness uiBusiness) {
+	public UIBusiness addBusiness(@RequestHeader(OWNER_ID) long vendorId, @RequestBody UIBusiness uiBusiness) {
 		return businessService.saveBusiness(vendorId,uiBusiness);
 	}
 	
 	@PutMapping
-	public UIBusiness updateBusiness(@RequestHeader(VENDOR_APP_ID) long vendorId,@RequestBody UIBusiness uiBusiness) {
+	public UIBusiness updateBusiness(@RequestHeader(OWNER_ID) long vendorId,@RequestBody UIBusiness uiBusiness) {
 		return businessService.saveBusiness(vendorId, uiBusiness);
 	}
 	
 	@GetMapping("/vendors")
-	public List<UIBusiness> getVendorBusinessDetailList(@RequestHeader(VENDOR_APP_ID) long vendorId) {
+	public List<UIBusiness> getVendorBusinessDetailList(@RequestHeader(OWNER_ID) long vendorId) {
 		return businessService.getBusinessList(vendorId);
 	}
 	

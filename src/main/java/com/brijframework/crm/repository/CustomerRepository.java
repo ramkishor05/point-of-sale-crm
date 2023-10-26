@@ -14,7 +14,7 @@ import com.brijframework.crm.entities.EOCustomer;
 @Transactional
 public interface CustomerRepository extends JpaRepository<EOCustomer, Long>{
 
-	@Query(nativeQuery = true , value = " SELECT * FROM EOCUSTOMER WHERE VENDOR_ID=?1 AND RECORD_STATUS=1 ")
+	@Query(nativeQuery = true , value = " SELECT * FROM EOCUSTOMER WHERE VENDOR_ID=?1")
 	Optional<List<EOCustomer>> findByVendorId(Long vendorId);
 
 }

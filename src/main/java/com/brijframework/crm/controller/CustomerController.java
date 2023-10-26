@@ -1,6 +1,6 @@
 package com.brijframework.crm.controller;
 
-import static com.brijframework.crm.contants.Constants.VENDOR_APP_ID;
+import static com.brijframework.crm.contants.Constants.OWNER_ID;
 
 import java.util.List;
 
@@ -27,23 +27,23 @@ public class CustomerController {
 	CustomerService customerService;
 	
 	@PostMapping
-	public UICustomer addCustomer(@RequestHeader(VENDOR_APP_ID) long vendorId, @RequestBody UICustomer uiCustomer) {
+	public UICustomer addCustomer(@RequestHeader(OWNER_ID) long vendorId, @RequestBody UICustomer uiCustomer) {
 		return customerService.saveCustomer(vendorId,uiCustomer);
 	}
 	
 	@PutMapping
-	public UICustomer updateCustomer(@RequestHeader(VENDOR_APP_ID) long vendorId,@RequestBody UICustomer uiCustomer) {
+	public UICustomer updateCustomer(@RequestHeader(OWNER_ID) long vendorId,@RequestBody UICustomer uiCustomer) {
 		return customerService.saveCustomer(vendorId, uiCustomer);
 	}
 	
 	@GetMapping("/vendors")
-	public List<UICustomer> getVendorCustomerDetailList(@RequestHeader(VENDOR_APP_ID) long vendorId) {
+	public List<UICustomer> getVendorCustomerDetailList(@RequestHeader(OWNER_ID) long vendorId) {
 		return customerService.getCustomerList(vendorId);
 	}
 	
 	@GetMapping
-	public List<UICustomer> getCustomerDetailList() {
-		return customerService.getCustomerList();
+	public List<UICustomer> getCustomerDetailList(@RequestHeader(OWNER_ID) long vendorId) {
+		return customerService.getCustomerList(vendorId);
 	}
 	
 	
