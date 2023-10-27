@@ -1,5 +1,6 @@
 package com.brijframework.crm.service.impl;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -54,7 +55,7 @@ public class CustomerServiceImpl implements CustomerService {
 
 	@Override
 	public List<UICustomer> getCustomerList(Long vendorId) {
-		return customerMapper.mapToDTO( customerRepository.findByVendorId(vendorId).orElseThrow(()-> new RuntimeException("Not fond")) );
+		return customerMapper.mapToDTO( customerRepository.findByVendorId(vendorId).orElse(new ArrayList<EOCustomer>()));
 	}
 	
 	@Override
