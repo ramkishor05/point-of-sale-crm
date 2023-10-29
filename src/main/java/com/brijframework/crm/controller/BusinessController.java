@@ -42,8 +42,8 @@ public class BusinessController {
 	}
 	
 	@GetMapping
-	public List<UIBusiness> getBusinessDetailList() {
-		return businessService.getBusinessList();
+	public List<UIBusiness> getBusinessDetailList(@RequestHeader(OWNER_ID) long vendorId) {
+		return businessService.getBusinessList(vendorId);
 	}
 	
 	@DeleteMapping("/{businessId}")

@@ -100,4 +100,12 @@ public class EOSupplier extends EOEntityObject {
 		this.presentAddress = presentAddress;
 	}
 
+	public EOVendor getVendor() {
+		return vendor;
+	}
+
+	public void setVendor(EOVendor vendor) {
+		this.vendor = vendor;
+	}
+	
 }
