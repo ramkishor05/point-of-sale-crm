@@ -1,6 +1,6 @@
 package com.brijframework.crm.entities;
 
-import static com.brijframework.crm.contants.Constants.EMAIL_ADDRESS;
+import static com.brijframework.crm.contants.Constants.*;
 import static com.brijframework.crm.contants.Constants.EOVENDOR;
 import static com.brijframework.crm.contants.Constants.MOBILE_NUMBER;
 import static com.brijframework.crm.contants.Constants.NAME;
@@ -21,7 +21,7 @@ import javax.persistence.Table;
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
 @Table(name = EOVENDOR)
-public class EOVendor extends EOEntityObject {
+public class EOVendor extends EOCrmObject {
 
 	/**
 	 * 
@@ -45,7 +45,10 @@ public class EOVendor extends EOEntityObject {
 
 	@Column(name = PRESENT_ADDRESS)
 	private String presentAddress;
-
+	
+	@OneToMany(mappedBy = VENDOR)
+	private List<EOEmployee> employeeList;
+	
 	@OneToMany(mappedBy = VENDOR)
 	private List<EOSupplier> supplierList;
 
@@ -101,6 +104,14 @@ public class EOVendor extends EOEntityObject {
 
 	public void setPresentAddress(String presentAddress) {
 		this.presentAddress = presentAddress;
+	}
+
+	public List<EOEmployee> getEmployeeList() {
+		return employeeList;
+	}
+
+	public void setEmployeeList(List<EOEmployee> employeeList) {
+		this.employeeList = employeeList;
 	}
 
 	public List<EOSupplier> getSupplierList() {

@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2023-10-30T13:39:15+0530",
+    date = "2023-10-31T19:36:07+0530",
     comments = "version: 1.3.0.Final, compiler: javac, environment: Java 1.8.0_202 (Oracle Corporation)"
 )
 @Component
@@ -24,6 +24,17 @@ public class CustomerDetailMapperImpl implements CustomerDetailMapper {
 
         UICustomerDetail uICustomerDetail = new UICustomerDetail();
 
+        if ( eoRole.getId() != null ) {
+            uICustomerDetail.setId( eoRole.getId() );
+        }
+        uICustomerDetail.setName( eoRole.getName() );
+        uICustomerDetail.setAccountId( eoRole.getAccountId() );
+        uICustomerDetail.setPhoneNumber( eoRole.getPhoneNumber() );
+        uICustomerDetail.setMobileNumber( eoRole.getMobileNumber() );
+        uICustomerDetail.setEmailAddress( eoRole.getEmailAddress() );
+        uICustomerDetail.setPermamentAddress( eoRole.getPermamentAddress() );
+        uICustomerDetail.setPresentAddress( eoRole.getPresentAddress() );
+
         return uICustomerDetail;
     }
 
@@ -34,6 +45,15 @@ public class CustomerDetailMapperImpl implements CustomerDetailMapper {
         }
 
         EOCustomer eOCustomer = new EOCustomer();
+
+        eOCustomer.setId( eoRoleDTO.getId() );
+        eOCustomer.setAccountId( eoRoleDTO.getAccountId() );
+        eOCustomer.setName( eoRoleDTO.getName() );
+        eOCustomer.setPhoneNumber( eoRoleDTO.getPhoneNumber() );
+        eOCustomer.setMobileNumber( eoRoleDTO.getMobileNumber() );
+        eOCustomer.setEmailAddress( eoRoleDTO.getEmailAddress() );
+        eOCustomer.setPermamentAddress( eoRoleDTO.getPermamentAddress() );
+        eOCustomer.setPresentAddress( eoRoleDTO.getPresentAddress() );
 
         return eOCustomer;
     }

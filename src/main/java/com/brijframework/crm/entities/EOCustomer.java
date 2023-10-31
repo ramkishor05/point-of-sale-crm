@@ -14,14 +14,12 @@ import javax.persistence.UniqueConstraint;
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
 @Table(name = EOCUSTOMER, uniqueConstraints = { @UniqueConstraint(columnNames = { NAME, VENDOR_ID }) })
-public class EOCustomer extends EOEntityObject {
+public class EOCustomer extends EOCrmObject {
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
-
 
 	@Column(name = NAME)
 	private String name;

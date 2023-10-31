@@ -1,6 +1,6 @@
 package com.brijframework.crm.dto;
 
-public class UICustomer extends UIComman{
+public class UICustomer extends UICrmObject{
 
 	private String phoneNumber;
 

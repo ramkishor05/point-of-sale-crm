@@ -21,7 +21,7 @@ import javax.persistence.UniqueConstraint;
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
 @Table(name = EOSUPPLIER, uniqueConstraints = { @UniqueConstraint(columnNames = { NAME, VENDOR_ID }) })
-public class EOSupplier extends EOEntityObject {
+public class EOSupplier extends EOCrmObject{
 
 	/**
 	 * 

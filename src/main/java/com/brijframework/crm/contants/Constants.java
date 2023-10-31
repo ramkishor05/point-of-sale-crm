@@ -53,6 +53,7 @@ public class Constants {
 	public static final String TYPE = "TYPE";
 	public static final String URL = "URL";
 	public static final String DETAIL = "DETAIL";
+	public static final String ACCOUNT_ID = "ACCOUNT_ID";
 	public static final String PRESENT_ADDRESS = "PRESENT_ADDRESS";
 	public static final String PERMAMENT_ADDRESS = "PERMAMENT_ADDRESS";
 	public static final String EMAIL_ADDRESS = "EMAIL_ADDRESS";
@@ -105,6 +106,8 @@ public class Constants {
 	public static final String EOSUPPLIER = "EOSUPPLIER";
 	public static final String EOVENDOR = "EOVENDOR";
 	public static final String EOCUSTOMER = "EOCUSTOMER";
+	public static final String EOEMPLOYEE = "EOEMPLOYEE";
+
 	public static final String EOBUSINESS = "EOBUSINESS";
 	public static final String CUST_PRODUCTION_APP = "custProductionApp";
 	public static final String CUST_ID = "CUST_ID";
