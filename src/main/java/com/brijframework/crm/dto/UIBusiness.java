@@ -11,6 +11,8 @@ public class UIBusiness extends UIComman{
 	private String permamentAddress;
 
 	private String presentAddress;
+	
+	private Boolean selected;
 
 	public String getPhoneNumber() {
 		return phoneNumber;
@@ -51,6 +53,13 @@ public class UIBusiness extends UIComman{
 	public void setPresentAddress(String presentAddress) {
 		this.presentAddress = presentAddress;
 	}
-	
+
+	public Boolean getSelected() {
+		return selected;
+	}
+
+	public void setSelected(Boolean selected) {
+		this.selected = selected;
+	}
 	
 }

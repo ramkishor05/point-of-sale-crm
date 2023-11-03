@@ -21,6 +21,8 @@ public class EOBusiness extends EOEntityObject {
 	 */
 	private static final long serialVersionUID = 1L;
 
+	private static final String CUURENT_SELECTED = "CUURENT_SELECTED";
+
 	@Column(name = NAME)
 	private String name;
 
@@ -38,6 +40,9 @@ public class EOBusiness extends EOEntityObject {
 
 	@Column(name = PRESENT_ADDRESS)
 	private String presentAddress;
+	
+	@Column(name = CUURENT_SELECTED)
+	private Boolean selected;
 
 	@JoinColumn(name = VENDOR_ID)
 	@ManyToOne
