@@ -1,6 +1,6 @@
 package com.brijframework.crm.controller;
 
-import static com.brijframework.crm.contants.Constants.OWNER_ID;
+import static com.brijframework.crm.contants.Constants.CUST_APP_ID;
 
 import java.util.List;
 
@@ -27,23 +27,23 @@ public class EmployeeController {
 	EmployeeService employeeService;
 	
 	@PostMapping
-	public UIEmployee addEmployee(@RequestHeader(OWNER_ID) long vendorId, @RequestBody UIEmployee uiEmployee) {
-		return employeeService.saveEmployee(vendorId,uiEmployee);
+	public UIEmployee addEmployee(@RequestHeader(CUST_APP_ID) long custAppId, @RequestBody UIEmployee uiEmployee) {
+		return employeeService.saveEmployee(custAppId,uiEmployee);
 	}
 	
 	@PutMapping
-	public UIEmployee updateEmployee(@RequestHeader(OWNER_ID) long vendorId,@RequestBody UIEmployee uiEmployee) {
-		return employeeService.saveEmployee(vendorId, uiEmployee);
+	public UIEmployee updateEmployee(@RequestHeader(CUST_APP_ID) long custAppId,@RequestBody UIEmployee uiEmployee) {
+		return employeeService.saveEmployee(custAppId, uiEmployee);
 	}
 	
 	@GetMapping("/vendors")
-	public List<UIEmployee> getVendorEmployeeDetailList(@RequestHeader(OWNER_ID) long vendorId) {
-		return employeeService.getEmployeeList(vendorId);
+	public List<UIEmployee> getVendorEmployeeDetailList(@RequestHeader(CUST_APP_ID) long custAppId) {
+		return employeeService.getEmployeeList(custAppId);
 	}
 	
 	@GetMapping
-	public List<UIEmployee> getEmployeeDetailList(@RequestHeader(OWNER_ID) long vendorId) {
-		return employeeService.getEmployeeList(vendorId);
+	public List<UIEmployee> getEmployeeDetailList(@RequestHeader(CUST_APP_ID) long custAppId) {
+		return employeeService.getEmployeeList(custAppId);
 	}
 	
 	

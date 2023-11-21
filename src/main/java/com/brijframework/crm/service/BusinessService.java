@@ -7,13 +7,13 @@ import com.brijframework.crm.dto.UIBusinessDetail;
 
 public interface BusinessService {
 
-	UIBusiness saveBusiness(Long vendorId, UIBusiness uiBusiness);
+	UIBusiness saveBusiness(Long ownerId, UIBusiness uiBusiness);
 
 	UIBusiness getBusiness(Long id);
 
 	boolean deleteBusiness(Long id);
 
-	List<UIBusiness> getBusinessList(Long vendorId);
+	List<UIBusiness> getBusinessList(Long ownerId);
 
 	UIBusinessDetail getBusinessDetail(Long id);
 

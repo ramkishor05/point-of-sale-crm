@@ -32,9 +32,9 @@ public class EmployeeServiceImpl implements EmployeeService {
 	private EmployeeDetailMapper employeeDetailMapper;
 	
 	@Override
-	public UIEmployee saveEmployee(Long vendorId, UIEmployee uiEmployee) {
+	public UIEmployee saveEmployee(Long custAppId, UIEmployee uiEmployee) {
 		EOEmployee eoEmployee=employeeMapper.mapToDAO(uiEmployee);
-		EOVendor eoVendor = vendorRepository.findById(vendorId).orElseThrow(()-> new RuntimeException("Not fond vendor")) ;
+		EOVendor eoVendor = vendorRepository.findById(custAppId).orElseThrow(()-> new RuntimeException("Not fond vendor")) ;
 		eoEmployee.setVendor(eoVendor);
 		employeeRepository.save(eoEmployee);
 		return employeeMapper.mapToDTO(eoEmployee);
@@ -54,8 +54,8 @@ public class EmployeeServiceImpl implements EmployeeService {
 	}
 
 	@Override
-	public List<UIEmployee> getEmployeeList(Long vendorId) {
-		return employeeMapper.mapToDTO( employeeRepository.findByVendorId(vendorId).orElse(new ArrayList<EOEmployee>()));
+	public List<UIEmployee> getEmployeeList(Long custAppId) {
+		return employeeMapper.mapToDTO( employeeRepository.findByCustAppId(custAppId).orElse(new ArrayList<EOEmployee>()));
 	}
 	
 	@Override

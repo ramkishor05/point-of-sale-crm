@@ -31,9 +31,9 @@ public class SupplierServiceImpl implements SupplierService {
 	private VendorRepository vendorRepository; 
 	
 	@Override
-	public UISupplier saveSupplier(Long vendorId, UISupplier uiSupplier) {
+	public UISupplier saveSupplier(Long custAppId, UISupplier uiSupplier) {
 		EOSupplier eoSupplier=supplierMapper.mapToDAO(uiSupplier);
-		EOVendor eoVendor = vendorRepository.findById(vendorId).orElseThrow(()-> new RuntimeException("Not fond vendor")) ;
+		EOVendor eoVendor = vendorRepository.findById(custAppId).orElseThrow(()-> new RuntimeException("Not fond vendor")) ;
 		eoSupplier.setVendor(eoVendor);
 		supplierRepository.save(eoSupplier);
 		return supplierMapper.mapToDTO(eoSupplier);
@@ -53,8 +53,8 @@ public class SupplierServiceImpl implements SupplierService {
 	}
 
 	@Override
-	public List<UISupplier> getSupplierList(Long vendorId) {
-		return supplierMapper.mapToDTO( supplierRepository.findByVendorId(vendorId));
+	public List<UISupplier> getSupplierList(Long custAppId) {
+		return supplierMapper.mapToDTO( supplierRepository.findByCustAppId(custAppId));
 	}
 	
 	@Override

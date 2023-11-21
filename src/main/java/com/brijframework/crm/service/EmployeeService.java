@@ -13,7 +13,7 @@ public interface EmployeeService {
 
 	boolean deleteEmployee(Long id);
 
-	List<UIEmployee> getEmployeeList(Long vendorId);
+	List<UIEmployee> getEmployeeList(Long custAppId);
 
 	UIEmployeeDetail getEmployeeDetail(Long id);
 

@@ -1,6 +1,6 @@
 package com.brijframework.crm.controller;
 
-import static com.brijframework.crm.contants.Constants.OWNER_ID;
+import static com.brijframework.crm.contants.Constants.CUST_APP_ID;
 
 import java.util.List;
 
@@ -27,23 +27,23 @@ public class SupplierController {
 	SupplierService supplierService;
 	
 	@PostMapping
-	public UISupplier addSupplier(@RequestHeader(OWNER_ID) long vendorId, @RequestBody UISupplier uiSupplier) {
-		return supplierService.saveSupplier(vendorId,uiSupplier);
+	public UISupplier addSupplier(@RequestHeader(CUST_APP_ID) long custAppId, @RequestBody UISupplier uiSupplier) {
+		return supplierService.saveSupplier(custAppId,uiSupplier);
 	}
 	
 	@PutMapping
-	public UISupplier updateSupplier(@RequestHeader(OWNER_ID) long vendorId,@RequestBody UISupplier uiSupplier) {
-		return supplierService.saveSupplier(vendorId, uiSupplier);
+	public UISupplier updateSupplier(@RequestHeader(CUST_APP_ID) long custAppId,@RequestBody UISupplier uiSupplier) {
+		return supplierService.saveSupplier(custAppId, uiSupplier);
 	}
 	
 	@GetMapping("/vendors")
-	public List<UISupplier> getVendorSupplierDetailList(@RequestHeader(OWNER_ID) long vendorId) {
-		return supplierService.getSupplierList(vendorId);
+	public List<UISupplier> getVendorSupplierDetailList(@RequestHeader(CUST_APP_ID) long custAppId) {
+		return supplierService.getSupplierList(custAppId);
 	}
 	
 	@GetMapping
-	public List<UISupplier> getSupplierDetailList(@RequestHeader(OWNER_ID) long vendorId) {
-		return supplierService.getSupplierList(vendorId);
+	public List<UISupplier> getSupplierDetailList(@RequestHeader(CUST_APP_ID) long custAppId) {
+		return supplierService.getSupplierList(custAppId);
 	}
 	
 	@DeleteMapping("/{supplierId}")

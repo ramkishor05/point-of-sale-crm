@@ -16,7 +16,7 @@ import com.brijframework.crm.entities.EOEmployee;
 @Transactional
 public interface EmployeeRepository extends JpaRepository<EOEmployee, Long>{
 
-	@Query(nativeQuery = true , value = " SELECT * FROM "+EOEMPLOYEE+" WHERE VENDOR_ID=?1")
-	Optional<List<EOEmployee>> findByVendorId(Long vendorId);
+	@Query(nativeQuery = true , value = " SELECT * FROM "+EOEMPLOYEE+" WHERE CUST_BUSINESS_APP_ID=?1")
+	Optional<List<EOEmployee>> findByCustAppId(Long custAppId);
 
 }

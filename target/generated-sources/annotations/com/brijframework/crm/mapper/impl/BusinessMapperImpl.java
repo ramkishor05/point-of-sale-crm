@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2023-10-31T22:11:45+0530",
+    date = "2023-11-20T22:25:37+0530",
     comments = "version: 1.3.0.Final, compiler: javac, environment: Java 11.0.19 (Oracle Corporation)"
 )
 @Component
@@ -33,6 +33,7 @@ public class BusinessMapperImpl implements BusinessMapper {
         uIBusiness.setEmailAddress( eoRole.getEmailAddress() );
         uIBusiness.setPermamentAddress( eoRole.getPermamentAddress() );
         uIBusiness.setPresentAddress( eoRole.getPresentAddress() );
+        uIBusiness.setSelected( eoRole.getSelected() );
 
         return uIBusiness;
     }
@@ -52,6 +53,7 @@ public class BusinessMapperImpl implements BusinessMapper {
         eOBusiness.setEmailAddress( eoRoleDTO.getEmailAddress() );
         eOBusiness.setPermamentAddress( eoRoleDTO.getPermamentAddress() );
         eOBusiness.setPresentAddress( eoRoleDTO.getPresentAddress() );
+        eOBusiness.setSelected( eoRoleDTO.getSelected() );
 
         return eOBusiness;
     }

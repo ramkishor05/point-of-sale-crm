@@ -13,7 +13,7 @@ public interface CustomerService {
 
 	boolean deleteCustomer(Long id);
 
-	List<UICustomer> getCustomerList(Long vendorId);
+	List<UICustomer> getCustomerList(Long custAppId);
 
 	UICustomerDetail getCustomerDetail(Long id);
 

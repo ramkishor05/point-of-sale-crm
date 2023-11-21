@@ -32,11 +32,11 @@ public class BusinessServiceImpl implements BusinessService {
 	private VendorRepository vendorRepository; 
 	
 	@Override
-	public UIBusiness saveBusiness(Long vendorId, UIBusiness uiBusiness) {
+	public UIBusiness saveBusiness(Long ownerId, UIBusiness uiBusiness) {
 		EOBusiness eoBusiness=businessMapper.mapToDAO(uiBusiness);
-		EOVendor eoVendor = vendorRepository.findById(vendorId).orElseThrow(()-> new RuntimeException("Not fond vendor")) ;
+		EOVendor eoVendor = vendorRepository.findById(ownerId).orElseThrow(()-> new RuntimeException("Not fond vendor")) ;
 		eoBusiness.setVendor(eoVendor);
-		businessRepository.save(eoBusiness);
+		eoBusiness=businessRepository.save(eoBusiness);
 		return businessMapper.mapToDTO(eoBusiness);
 	}
 

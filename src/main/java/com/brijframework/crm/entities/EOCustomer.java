@@ -1,6 +1,15 @@
 package com.brijframework.crm.entities;
 
-import static com.brijframework.crm.contants.Constants.*;
+import static com.brijframework.crm.contants.Constants.CUST_BUSINESS_APP_ID;
+import static com.brijframework.crm.contants.Constants.EMAIL_ADDRESS;
+import static com.brijframework.crm.contants.Constants.EOCUSTOMER;
+import static com.brijframework.crm.contants.Constants.MOBILE_NUMBER;
+import static com.brijframework.crm.contants.Constants.NAME;
+import static com.brijframework.crm.contants.Constants.PERMAMENT_ADDRESS;
+import static com.brijframework.crm.contants.Constants.PHONE_NUMBER;
+import static com.brijframework.crm.contants.Constants.PRESENT_ADDRESS;
+import static com.brijframework.crm.contants.Constants.TRUE;
+import static com.brijframework.crm.contants.Constants.VENDOR_ID;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -42,6 +51,10 @@ public class EOCustomer extends EOCrmObject {
 	@JoinColumn(name = VENDOR_ID, nullable = TRUE)
 	@ManyToOne
 	private EOVendor vendor;
+	
+	@JoinColumn(name = CUST_BUSINESS_APP_ID, nullable = false)
+	@ManyToOne
+	private EOCustBusinessApp custBusinessApp;
 
 	public String getName() {
 		return name;
@@ -99,4 +112,11 @@ public class EOCustomer extends EOCrmObject {
 		this.vendor = vendor;
 	}
 
+	public EOCustBusinessApp getCustBusinessApp() {
+		return custBusinessApp;
+	}
+
+	public void setCustBusinessApp(EOCustBusinessApp custBusinessApp) {
+		this.custBusinessApp = custBusinessApp;
+	}
 }

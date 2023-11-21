@@ -43,6 +43,10 @@ public class EOEmployee extends EOCrmObject {
 	@JoinColumn(name = VENDOR_ID, nullable = TRUE)
 	@ManyToOne
 	private EOVendor vendor;
+	
+	@JoinColumn(name = CUST_BUSINESS_APP_ID, nullable = false)
+	@ManyToOne
+	private EOCustBusinessApp custBusinessApp;
 
 	public String getName() {
 		return name;
@@ -100,4 +104,11 @@ public class EOEmployee extends EOCrmObject {
 		this.vendor = vendor;
 	}
 
+	public EOCustBusinessApp getCustBusinessApp() {
+		return custBusinessApp;
+	}
+
+	public void setCustBusinessApp(EOCustBusinessApp custBusinessApp) {
+		this.custBusinessApp = custBusinessApp;
+	}
 }

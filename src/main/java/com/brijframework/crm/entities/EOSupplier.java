@@ -1,5 +1,6 @@
 package com.brijframework.crm.entities;
 
+import static com.brijframework.crm.contants.Constants.CUST_BUSINESS_APP_ID;
 import static com.brijframework.crm.contants.Constants.EMAIL_ADDRESS;
 import static com.brijframework.crm.contants.Constants.EOSUPPLIER;
 import static com.brijframework.crm.contants.Constants.MOBILE_NUMBER;
@@ -51,6 +52,10 @@ public class EOSupplier extends EOCrmObject{
 	@JoinColumn(name = VENDOR_ID)
 	@ManyToOne
 	private EOVendor vendor;
+	
+	@JoinColumn(name = CUST_BUSINESS_APP_ID, nullable = false)
+	@ManyToOne
+	private EOCustBusinessApp custBusinessApp;
 
 	public String getName() {
 		return name;
@@ -108,4 +113,11 @@ public class EOSupplier extends EOCrmObject{
 		this.vendor = vendor;
 	}
 	
+	public EOCustBusinessApp getCustBusinessApp() {
+		return custBusinessApp;
+	}
+
+	public void setCustBusinessApp(EOCustBusinessApp custBusinessApp) {
+		this.custBusinessApp = custBusinessApp;
+	}
 }

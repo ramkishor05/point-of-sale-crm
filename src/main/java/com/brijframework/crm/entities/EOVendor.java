@@ -1,6 +1,6 @@
 package com.brijframework.crm.entities;
 
-import static com.brijframework.crm.contants.Constants.*;
+import static com.brijframework.crm.contants.Constants.EMAIL_ADDRESS;
 import static com.brijframework.crm.contants.Constants.EOVENDOR;
 import static com.brijframework.crm.contants.Constants.MOBILE_NUMBER;
 import static com.brijframework.crm.contants.Constants.NAME;
@@ -57,7 +57,7 @@ public class EOVendor extends EOCrmObject {
 
 	@OneToMany(mappedBy = VENDOR)
 	private List<EOBusiness> businessList;
-
+	
 	public String getName() {
 		return name;
 	}

@@ -27,23 +27,23 @@ public class BusinessController {
 	BusinessService businessService;
 	
 	@PostMapping
-	public UIBusiness addBusiness(@RequestHeader(OWNER_ID) long vendorId, @RequestBody UIBusiness uiBusiness) {
-		return businessService.saveBusiness(vendorId,uiBusiness);
+	public UIBusiness addBusiness(@RequestHeader(OWNER_ID) long ownerId, @RequestBody UIBusiness uiBusiness) {
+		return businessService.saveBusiness(ownerId,uiBusiness);
 	}
 	
 	@PutMapping
-	public UIBusiness updateBusiness(@RequestHeader(OWNER_ID) long vendorId,@RequestBody UIBusiness uiBusiness) {
-		return businessService.saveBusiness(vendorId, uiBusiness);
+	public UIBusiness updateBusiness(@RequestHeader(OWNER_ID) long ownerId,@RequestBody UIBusiness uiBusiness) {
+		return businessService.saveBusiness(ownerId, uiBusiness);
 	}
 	
 	@GetMapping("/vendors")
-	public List<UIBusiness> getVendorBusinessDetailList(@RequestHeader(OWNER_ID) long vendorId) {
-		return businessService.getBusinessList(vendorId);
+	public List<UIBusiness> getVendorBusinessDetailList(@RequestHeader(OWNER_ID) long ownerId) {
+		return businessService.getBusinessList(ownerId);
 	}
 	
 	@GetMapping
-	public List<UIBusiness> getBusinessDetailList(@RequestHeader(OWNER_ID) long vendorId) {
-		return businessService.getBusinessList(vendorId);
+	public List<UIBusiness> getBusinessDetailList(@RequestHeader(OWNER_ID) long ownerId) {
+		return businessService.getBusinessList(ownerId);
 	}
 	
 	@DeleteMapping("/{businessId}")

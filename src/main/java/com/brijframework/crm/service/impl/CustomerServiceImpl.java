@@ -32,9 +32,9 @@ public class CustomerServiceImpl implements CustomerService {
 	private CustomerDetailMapper customerDetailMapper;
 	
 	@Override
-	public UICustomer saveCustomer(Long vendorId, UICustomer uiCustomer) {
+	public UICustomer saveCustomer(Long custAppId, UICustomer uiCustomer) {
 		EOCustomer eoCustomer=customerMapper.mapToDAO(uiCustomer);
-		EOVendor eoVendor = vendorRepository.findById(vendorId).orElseThrow(()-> new RuntimeException("Not fond vendor")) ;
+		EOVendor eoVendor = vendorRepository.findById(custAppId).orElseThrow(()-> new RuntimeException("Not fond vendor")) ;
 		eoCustomer.setVendor(eoVendor);
 		customerRepository.save(eoCustomer);
 		return customerMapper.mapToDTO(eoCustomer);
@@ -54,8 +54,8 @@ public class CustomerServiceImpl implements CustomerService {
 	}
 
 	@Override
-	public List<UICustomer> getCustomerList(Long vendorId) {
-		return customerMapper.mapToDTO( customerRepository.findByVendorId(vendorId).orElse(new ArrayList<EOCustomer>()));
+	public List<UICustomer> getCustomerList(Long custAppId) {
+		return customerMapper.mapToDTO( customerRepository.findByCustAppId(custAppId).orElse(new ArrayList<EOCustomer>()));
 	}
 	
 	@Override

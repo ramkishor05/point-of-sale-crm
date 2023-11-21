@@ -13,6 +13,8 @@ public class UIBusiness extends UIComman{
 	private String presentAddress;
 	
 	private Boolean selected;
+	
+	private long ownerId;
 
 	public String getPhoneNumber() {
 		return phoneNumber;
@@ -61,5 +63,14 @@ public class UIBusiness extends UIComman{
 	public void setSelected(Boolean selected) {
 		this.selected = selected;
 	}
+
+	public long getOwnerId() {
+		return ownerId;
+	}
+
+	public void setOwnerId(long ownerId) {
+		this.ownerId = ownerId;
+	}
+	
 	
 }

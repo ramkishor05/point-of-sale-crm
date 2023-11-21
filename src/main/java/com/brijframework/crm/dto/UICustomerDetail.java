@@ -12,6 +12,8 @@ public class UICustomerDetail extends UICrmObject{
 
 	private String presentAddress;
 
+	private long ownerId;
+
 
 	public String getPhoneNumber() {
 		return phoneNumber;
@@ -52,4 +54,14 @@ public class UICustomerDetail extends UICrmObject{
 	public void setPresentAddress(String presentAddress) {
 		this.presentAddress = presentAddress;
 	}
+	
+
+	public long getOwnerId() {
+		return ownerId;
+	}
+
+	public void setOwnerId(long ownerId) {
+		this.ownerId = ownerId;
+	}
+	
 }

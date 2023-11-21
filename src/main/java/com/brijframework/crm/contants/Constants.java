@@ -1,6 +1,9 @@
 package com.brijframework.crm.contants;
 
 public class Constants {
+	public static final String OWNER_ID_KEY = "ownerId";
+	public static final String APP_ID_KEY = "appId";
+	public static final String BUSINESS_ID_KEY = "businessId";
 	public static final String CUST_APP_ID = "custAppId";
 	public static final String CUST_APP_ID_URI = "{custAppId}";
 	public static final String OWNER_ID = "ownerId";
@@ -179,5 +182,11 @@ public class Constants {
 	public static final boolean TRUE = true;
 	public static final boolean FALSE = false;
 	public static final String ACTIVE = "ACTIVE";
+	
+	public static final String EOCUST_BUSINESS_APP = "EOCUST_BUSINESS_APP";
+	public static final String CUST_BUSINESS_APP = "custBusinessApp";
+	public static final String BUSINESS_ID = "BUSINESS_ID";
+	public static final String CUST_BUSINESS_APP_ID = "CUST_BUSINESS_APP_ID";
+
 
 }

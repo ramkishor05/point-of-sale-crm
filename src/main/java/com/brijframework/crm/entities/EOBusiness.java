@@ -104,4 +104,12 @@ public class EOBusiness extends EOEntityObject {
 		this.vendor = vendor;
 	}
 
+	public Boolean getSelected() {
+		return selected;
+	}
+
+	public void setSelected(Boolean selected) {
+		this.selected = selected;
+	}
+
 }

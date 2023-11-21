@@ -7,9 +7,9 @@ import com.brijframework.crm.dto.UISupplierDetail;
 
 public interface SupplierService {
 
-	UISupplier saveSupplier(Long vendorId, UISupplier uiSupplier);
+	UISupplier saveSupplier(Long custAppId, UISupplier uiSupplier);
 
-	List<UISupplier> getSupplierList(Long vendorId);
+	List<UISupplier> getSupplierList(Long custAppId);
 
 	boolean deleteSupplier(Long id);
 
