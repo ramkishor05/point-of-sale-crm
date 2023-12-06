@@ -7,10 +7,11 @@ import org.springframework.stereotype.Service;
 
 import com.brijframework.crm.dto.UISupplier;
 import com.brijframework.crm.dto.UISupplierDetail;
+import com.brijframework.crm.entities.EOCustBusinessApp;
 import com.brijframework.crm.entities.EOSupplier;
-import com.brijframework.crm.entities.EOVendor;
 import com.brijframework.crm.mapper.SupplierDetailMapper;
 import com.brijframework.crm.mapper.SupplierMapper;
+import com.brijframework.crm.repository.CustBusinessAppRepository;
 import com.brijframework.crm.repository.SupplierRepository;
 import com.brijframework.crm.repository.VendorRepository;
 import com.brijframework.crm.service.SupplierService;
@@ -28,13 +29,17 @@ public class SupplierServiceImpl implements SupplierService {
 	private SupplierDetailMapper supplierDetailMapper;
 	
 	@Autowired
-	private VendorRepository vendorRepository; 
+	private CustBusinessAppRepository custBusinessAppRepository; 
+	
+	@Autowired
+	private VendorRepository vendorRepository;
 	
 	@Override
 	public UISupplier saveSupplier(Long custAppId, UISupplier uiSupplier) {
 		EOSupplier eoSupplier=supplierMapper.mapToDAO(uiSupplier);
-		EOVendor eoVendor = vendorRepository.findById(custAppId).orElseThrow(()-> new RuntimeException("Not fond vendor")) ;
-		eoSupplier.setVendor(eoVendor);
+		EOCustBusinessApp eoCustBusinessApp = custBusinessAppRepository.findById(custAppId).orElseThrow(()-> new RuntimeException("Not fond app")) ;
+		eoSupplier.setCustBusinessApp(eoCustBusinessApp);
+		eoSupplier.setVendor(vendorRepository.getOne(eoCustBusinessApp.getCustId()));
 		supplierRepository.save(eoSupplier);
 		return supplierMapper.mapToDTO(eoSupplier);
 	}

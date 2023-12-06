@@ -17,6 +17,7 @@ com\brijframework\crm\mapper\CustBusinessAppMapper.class
 com\brijframework\crm\controller\CustApplicationController.class
 com\brijframework\crm\entities\EOVendor.class
 com\brijframework\crm\service\VendorService.class
+com\brijframework\crm\filters\TransactionFilter.class
 com\brijframework\crm\contants\DataStatus.class
 com\brijframework\crm\dto\UIComman.class
 com\brijframework\crm\dto\UIVendor.class
@@ -46,6 +47,7 @@ com\brijframework\crm\CrmMainApp.class
 com\brijframework\crm\entities\EOSupplier.class
 com\brijframework\crm\cust\mapper\impl\CustBusinessAppDetailMapperImpl.class
 com\brijframework\crm\dto\UIEmployeeDetail.class
+com\brijframework\crm\filters\MutableHttpServletRequest.class
 com\brijframework\crm\mapper\SupplierDetailMapper.class
 com\brijframework\crm\service\EmployeeService.class
 com\brijframework\crm\mapper\impl\CustomerMapperImpl.class
