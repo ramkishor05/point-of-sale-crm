@@ -8,10 +8,11 @@ import org.springframework.stereotype.Service;
 
 import com.brijframework.crm.dto.UIEmployee;
 import com.brijframework.crm.dto.UIEmployeeDetail;
+import com.brijframework.crm.entities.EOCustBusinessApp;
 import com.brijframework.crm.entities.EOEmployee;
-import com.brijframework.crm.entities.EOVendor;
 import com.brijframework.crm.mapper.EmployeeDetailMapper;
 import com.brijframework.crm.mapper.EmployeeMapper;
+import com.brijframework.crm.repository.CustBusinessAppRepository;
 import com.brijframework.crm.repository.EmployeeRepository;
 import com.brijframework.crm.repository.VendorRepository;
 import com.brijframework.crm.service.EmployeeService;
@@ -31,11 +32,15 @@ public class EmployeeServiceImpl implements EmployeeService {
 	@Autowired
 	private EmployeeDetailMapper employeeDetailMapper;
 	
+	@Autowired
+	private CustBusinessAppRepository custBusinessAppRepository;
+	
 	@Override
 	public UIEmployee saveEmployee(Long custAppId, UIEmployee uiEmployee) {
 		EOEmployee eoEmployee=employeeMapper.mapToDAO(uiEmployee);
-		EOVendor eoVendor = vendorRepository.findById(custAppId).orElseThrow(()-> new RuntimeException("Not fond vendor")) ;
-		eoEmployee.setVendor(eoVendor);
+		EOCustBusinessApp eoCustBusinessApp = custBusinessAppRepository.findById(custAppId).orElseThrow(()-> new RuntimeException("Not fond app")) ;
+		eoEmployee.setCustBusinessApp(eoCustBusinessApp);
+		eoEmployee.setVendor(vendorRepository.getOne(eoCustBusinessApp.getCustId()));
 		employeeRepository.save(eoEmployee);
 		return employeeMapper.mapToDTO(eoEmployee);
 	}

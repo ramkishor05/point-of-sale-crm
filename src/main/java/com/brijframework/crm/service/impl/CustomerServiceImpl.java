@@ -8,10 +8,11 @@ import org.springframework.stereotype.Service;
 
 import com.brijframework.crm.dto.UICustomer;
 import com.brijframework.crm.dto.UICustomerDetail;
+import com.brijframework.crm.entities.EOCustBusinessApp;
 import com.brijframework.crm.entities.EOCustomer;
-import com.brijframework.crm.entities.EOVendor;
 import com.brijframework.crm.mapper.CustomerDetailMapper;
 import com.brijframework.crm.mapper.CustomerMapper;
+import com.brijframework.crm.repository.CustBusinessAppRepository;
 import com.brijframework.crm.repository.CustomerRepository;
 import com.brijframework.crm.repository.VendorRepository;
 import com.brijframework.crm.service.CustomerService;
@@ -31,11 +32,15 @@ public class CustomerServiceImpl implements CustomerService {
 	@Autowired
 	private CustomerDetailMapper customerDetailMapper;
 	
+	@Autowired
+	private CustBusinessAppRepository custBusinessAppRepository;
+	
 	@Override
 	public UICustomer saveCustomer(Long custAppId, UICustomer uiCustomer) {
 		EOCustomer eoCustomer=customerMapper.mapToDAO(uiCustomer);
-		EOVendor eoVendor = vendorRepository.findById(custAppId).orElseThrow(()-> new RuntimeException("Not fond vendor")) ;
-		eoCustomer.setVendor(eoVendor);
+		EOCustBusinessApp eoCustBusinessApp = custBusinessAppRepository.findById(custAppId).orElseThrow(()-> new RuntimeException("Not fond app")) ;
+		eoCustomer.setCustBusinessApp(eoCustBusinessApp);
+		eoCustomer.setVendor(vendorRepository.getOne(eoCustBusinessApp.getCustId()));
 		customerRepository.save(eoCustomer);
 		return customerMapper.mapToDTO(eoCustomer);
 	}
