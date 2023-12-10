@@ -26,6 +26,7 @@ com\brijframework\crm\entities\EOBusiness.class
 com\brijframework\crm\dto\UICustBusinessApp.class
 com\brijframework\crm\service\impl\SupplierServiceImpl.class
 com\brijframework\crm\repository\CustBusinessAppRepository.class
+com\brijframework\crm\utils\CommanUtil.class
 com\brijframework\crm\entities\EOCustomer.class
 com\brijframework\crm\mapper\impl\EmployeeDetailMapperImpl.class
 com\brijframework\crm\entities\EOCustBusinessApp.class

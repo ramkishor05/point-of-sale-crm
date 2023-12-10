@@ -19,6 +19,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
+import com.brijframework.crm.entities.EOCustBusinessApp;
 import com.brijframework.crm.repository.CustBusinessAppRepository;
 import com.brijframework.crm.utils.CommanUtil;
 
@@ -47,9 +48,11 @@ public class TransactionFilter implements Filter {
          		req.setAttribute(CUST_APP_ID, ""+custBusinessApp.getId());
          	});
          } else  if(Objects.nonNull(ownerId)&& CommanUtil.isNumeric(ownerId)) {
-         	custBusinessAppRepository.findByCustIdAndAppId(Long.valueOf(ownerId), Long.valueOf(1l)).ifPresent((custBusinessApp)->{
-         		requestWrapper.putHeader(CUST_APP_ID, ""+custBusinessApp.getId());
-         		req.setAttribute(CUST_APP_ID, ""+custBusinessApp.getId());
+         	custBusinessAppRepository.findByCustIdAndAppId(Long.valueOf(ownerId), Long.valueOf(1l)).ifPresent((custBusinessAppList)->{
+         		for(EOCustBusinessApp custBusinessApp : custBusinessAppList) {
+	         		requestWrapper.putHeader(CUST_APP_ID, ""+custBusinessApp.getId());
+	         		req.setAttribute(CUST_APP_ID, ""+custBusinessApp.getId());
+         		}
          	});
          }
         
