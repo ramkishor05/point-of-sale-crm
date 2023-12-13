@@ -56,6 +56,7 @@ public class Constants {
 	public static final String TYPE = "TYPE";
 	public static final String URL = "URL";
 	public static final String DETAIL = "DETAIL";
+	public static final String PORTAL_ACCESS = "PORTAL_ACCESS";
 	public static final String ACCOUNT_ID = "ACCOUNT_ID";
 	public static final String PRESENT_ADDRESS = "PRESENT_ADDRESS";
 	public static final String PERMAMENT_ADDRESS = "PERMAMENT_ADDRESS";

@@ -1,6 +1,6 @@
 package com.brijframework.crm.entities;
 
-import static com.brijframework.crm.contants.Constants.ACCOUNT_ID;
+import static com.brijframework.crm.contants.Constants.*;
 
 import javax.persistence.Column;
 import javax.persistence.MappedSuperclass;
@@ -16,6 +16,9 @@ public abstract class EOCrmObject extends EOEntityObject {
 	@Column(name = ACCOUNT_ID, nullable = true)
 	private Long accountId;
 	
+	@Column(name = PORTAL_ACCESS, nullable = true)
+	private Boolean portalAccess;
+	
 	public Long getAccountId() {
 		return accountId;
 	}
@@ -23,4 +26,13 @@ public abstract class EOCrmObject extends EOEntityObject {
 	public void setAccountId(Long accountId) {
 		this.accountId = accountId;
 	}
+
+	public Boolean getPortalAccess() {
+		return portalAccess;
+	}
+
+	public void setPortalAccess(Boolean portalAccess) {
+		this.portalAccess = portalAccess;
+	}
+	
 }
