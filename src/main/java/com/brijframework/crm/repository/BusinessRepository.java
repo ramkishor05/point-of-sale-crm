@@ -14,7 +14,7 @@ import com.brijframework.crm.entities.EOBusiness;
 @Transactional
 public interface BusinessRepository extends JpaRepository<EOBusiness, Long>{
 
-	@Query(nativeQuery = true , value = " SELECT * FROM EOBUSINESS WHERE VENDOR_ID=?1")
+	@Query(nativeQuery = true , value = " SELECT * FROM EOBUSINESS WHERE VENDOR_ID=?1 and RECORD_STATUS=1")
 	Optional<List<EOBusiness>> findByVendorId(Long vendorId);
 
 }

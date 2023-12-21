@@ -10,8 +10,8 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2023-12-11T13:44:11+0530",
-    comments = "version: 1.3.0.Final, compiler: javac, environment: Java 1.8.0_202 (Oracle Corporation)"
+    date = "2023-12-13T22:03:45+0530",
+    comments = "version: 1.3.0.Final, compiler: javac, environment: Java 11.0.19 (Oracle Corporation)"
 )
 @Component
 public class VendorMapperImpl implements VendorMapper {
@@ -28,6 +28,7 @@ public class VendorMapperImpl implements VendorMapper {
             uIVendor.setId( eoRole.getId() );
         }
         uIVendor.setAccountId( eoRole.getAccountId() );
+        uIVendor.setPortalAccess( eoRole.getPortalAccess() );
         uIVendor.setName( eoRole.getName() );
         uIVendor.setPhoneNumber( eoRole.getPhoneNumber() );
         uIVendor.setMobileNumber( eoRole.getMobileNumber() );
@@ -48,6 +49,7 @@ public class VendorMapperImpl implements VendorMapper {
 
         eOVendor.setId( eoRoleDTO.getId() );
         eOVendor.setAccountId( eoRoleDTO.getAccountId() );
+        eOVendor.setPortalAccess( eoRoleDTO.getPortalAccess() );
         eOVendor.setName( eoRoleDTO.getName() );
         eOVendor.setPhoneNumber( eoRoleDTO.getPhoneNumber() );
         eOVendor.setMobileNumber( eoRoleDTO.getMobileNumber() );

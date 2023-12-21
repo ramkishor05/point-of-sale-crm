@@ -10,8 +10,8 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2023-12-11T13:44:11+0530",
-    comments = "version: 1.3.0.Final, compiler: javac, environment: Java 1.8.0_202 (Oracle Corporation)"
+    date = "2023-12-13T22:03:45+0530",
+    comments = "version: 1.3.0.Final, compiler: javac, environment: Java 11.0.19 (Oracle Corporation)"
 )
 @Component
 public class CustomerMapperImpl implements CustomerMapper {
@@ -29,6 +29,7 @@ public class CustomerMapperImpl implements CustomerMapper {
         }
         uICustomer.setName( eoRole.getName() );
         uICustomer.setAccountId( eoRole.getAccountId() );
+        uICustomer.setPortalAccess( eoRole.getPortalAccess() );
         uICustomer.setPhoneNumber( eoRole.getPhoneNumber() );
         uICustomer.setMobileNumber( eoRole.getMobileNumber() );
         uICustomer.setEmailAddress( eoRole.getEmailAddress() );
@@ -48,6 +49,7 @@ public class CustomerMapperImpl implements CustomerMapper {
 
         eOCustomer.setId( eoRoleDTO.getId() );
         eOCustomer.setAccountId( eoRoleDTO.getAccountId() );
+        eOCustomer.setPortalAccess( eoRoleDTO.getPortalAccess() );
         eOCustomer.setName( eoRoleDTO.getName() );
         eOCustomer.setPhoneNumber( eoRoleDTO.getPhoneNumber() );
         eOCustomer.setMobileNumber( eoRoleDTO.getMobileNumber() );

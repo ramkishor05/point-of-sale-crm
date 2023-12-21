@@ -36,6 +36,7 @@ public class BusinessServiceImpl implements BusinessService {
 		EOBusiness eoBusiness=businessMapper.mapToDAO(uiBusiness);
 		EOVendor eoVendor = vendorRepository.findById(ownerId).orElseThrow(()-> new RuntimeException("Not fond vendor")) ;
 		eoBusiness.setVendor(eoVendor);
+		eoBusiness.setRecordState(true);
 		eoBusiness=businessRepository.save(eoBusiness);
 		return businessMapper.mapToDTO(eoBusiness);
 	}
