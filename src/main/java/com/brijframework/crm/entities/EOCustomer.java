@@ -16,6 +16,7 @@ import javax.persistence.Entity;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import javax.persistence.JoinColumn;
+import javax.persistence.Lob;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
@@ -43,9 +44,11 @@ public class EOCustomer extends EOCrmObject {
 	private String emailAddress;
 
 	@Column(name = PERMAMENT_ADDRESS)
+	@Lob
 	private String permamentAddress;
 
 	@Column(name = PRESENT_ADDRESS)
+	@Lob
 	private String presentAddress;
 
 	@JoinColumn(name = VENDOR_ID, nullable = TRUE)

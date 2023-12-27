@@ -15,6 +15,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
+import javax.persistence.Lob;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -41,9 +42,11 @@ public class EOVendor extends EOCrmObject {
 	private String emailAddress;
 
 	@Column(name = PERMAMENT_ADDRESS)
+	@Lob
 	private String permamentAddress;
 
 	@Column(name = PRESENT_ADDRESS)
+	@Lob
 	private String presentAddress;
 	
 	@OneToMany(mappedBy = VENDOR)
