@@ -52,6 +52,9 @@ public class Constants {
 	public static final String MPN = "MPN";
 	public static final String NAME = "NAME";
 	public static final String DESC = "DESCS";
+	public static final String DESCRIPTION = "DESCRIPTION";
+	public static final String SYMBOL = "SYMBOL";
+
 	public static final String TYPE_ID = "TYPE_ID";
 	public static final String TYPE = "TYPE";
 	public static final String URL = "URL";
@@ -111,7 +114,10 @@ public class Constants {
 	public static final String EOVENDOR = "EOVENDOR";
 	public static final String EOCUSTOMER = "EOCUSTOMER";
 	public static final String EOEMPLOYEE = "EOEMPLOYEE";
-
+	public static final String EOGLOBAL_COUNTRY = "EOGLOBAL_COUNTRY";
+	public static final String EOGLOBAL_CURRENCY_ITEM = "EOGLOBAL_CURRENCY_ITEM";
+	public static final String EOGLOBAL_CURRENCY_GROUP = "EOGLOBAL_CURRENCY_GROUP";
+	
 	public static final String EOBUSINESS = "EOBUSINESS";
 	public static final String CUST_PRODUCTION_APP = "custProductionApp";
 	public static final String CUST_ID = "CUST_ID";

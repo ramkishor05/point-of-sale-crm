@@ -24,6 +24,8 @@ public class EOBusiness extends EOEntityObject {
 
 	private static final String CUURENT_SELECTED = "CUURENT_SELECTED";
 
+	private static final String COUNTRY_ID = "COUNTRY_ID";
+
 	@Column(name = NAME)
 	private String name;
 
@@ -50,6 +52,10 @@ public class EOBusiness extends EOEntityObject {
 	@JoinColumn(name = VENDOR_ID)
 	@ManyToOne
 	private EOVendor vendor;
+	
+	@JoinColumn(name = COUNTRY_ID)
+	@ManyToOne
+	private EOGlobalCountry country;
 
 	public String getName() {
 		return name;
@@ -115,4 +121,11 @@ public class EOBusiness extends EOEntityObject {
 		this.selected = selected;
 	}
 
+	public EOGlobalCountry getCountry() {
+		return country;
+	}
+
+	public void setCountry(EOGlobalCountry country) {
+		this.country = country;
+	}
 }

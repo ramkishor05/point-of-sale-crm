@@ -6,6 +6,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.brijframework.crm.contants.RecordStatus;
 import com.brijframework.crm.dto.UICustomer;
 import com.brijframework.crm.dto.UICustomerDetail;
 import com.brijframework.crm.entities.EOCustBusinessApp;
@@ -53,7 +54,7 @@ public class CustomerServiceImpl implements CustomerService {
 	@Override
 	public boolean deleteCustomer(Long id) {
 		EOCustomer eoCustomer = customerRepository.findById(id).orElseThrow(()-> new RuntimeException("Not fond")) ;
-		eoCustomer.setRecordState(false);
+		eoCustomer.setRecordState(RecordStatus.DACTIVETED.getStatus());
 		customerRepository.save(eoCustomer);
 		return true;
 	}

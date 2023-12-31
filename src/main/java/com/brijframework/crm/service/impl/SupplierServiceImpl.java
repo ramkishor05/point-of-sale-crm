@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.brijframework.crm.contants.RecordStatus;
 import com.brijframework.crm.dto.UISupplier;
 import com.brijframework.crm.dto.UISupplierDetail;
 import com.brijframework.crm.entities.EOCustBusinessApp;
@@ -52,7 +53,7 @@ public class SupplierServiceImpl implements SupplierService {
 	@Override
 	public boolean deleteSupplier(Long id) {
 		EOSupplier eoSupplier = supplierRepository.findById(id).orElseThrow(()-> new RuntimeException("Not fond")) ;
-		eoSupplier.setRecordState(false);
+		eoSupplier.setRecordState(RecordStatus.DACTIVETED.getStatus());
 		supplierRepository.save(eoSupplier);
 		return true;
 	}

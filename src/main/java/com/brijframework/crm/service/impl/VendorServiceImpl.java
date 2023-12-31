@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.brijframework.crm.contants.RecordStatus;
 import com.brijframework.crm.dto.UIVendor;
 import com.brijframework.crm.dto.UIVendorDetail;
 import com.brijframework.crm.entities.EOVendor;
@@ -40,7 +41,7 @@ public class VendorServiceImpl implements VendorService {
 	@Override
 	public boolean deleteVendor(Long id) {
 		EOVendor eoVendor = vendorRepository.findById(id).orElseThrow(()-> new RuntimeException("Not fond")) ;
-		eoVendor.setRecordState(false);
+		eoVendor.setRecordState(RecordStatus.DACTIVETED.getStatus());
 		vendorRepository.save(eoVendor);
 		return true;
 	}

@@ -14,7 +14,9 @@ public class UIBusiness extends UIComman{
 	
 	private Boolean selected;
 	
-	private long ownerId;
+	private Long ownerId;
+	
+	private Long countryId;
 
 	public String getPhoneNumber() {
 		return phoneNumber;
@@ -64,13 +66,19 @@ public class UIBusiness extends UIComman{
 		this.selected = selected;
 	}
 
-	public long getOwnerId() {
+	public Long getOwnerId() {
 		return ownerId;
 	}
 
-	public void setOwnerId(long ownerId) {
+	public void setOwnerId(Long ownerId) {
 		this.ownerId = ownerId;
 	}
-	
-	
+
+	public Long getCountryId() {
+		return countryId;
+	}
+
+	public void setCountryId(Long countryId) {
+		this.countryId = countryId;
+	}
 }

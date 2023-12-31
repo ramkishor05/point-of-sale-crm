@@ -39,7 +39,7 @@ public abstract class EOEntityObject implements Serializable {
 	private Date updatedAt;
 	
 	@Column(name = "RECORD_STATUS")
-	private Boolean recordState;
+	private String recordState;
 	
 	@Column(name = "ORDER_SEQUENCE")
 	private Float orderSequence;
@@ -84,11 +84,11 @@ public abstract class EOEntityObject implements Serializable {
 		this.updatedAt = updatedAt;
 	}
 
-	public Boolean getRecordState() {
+	public String getRecordState() {
 		return recordState;
 	}
 
-	public void setRecordState(Boolean recordState) {
+	public void setRecordState(String recordState) {
 		this.recordState = recordState;
 	}
 

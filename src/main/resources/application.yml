@@ -19,7 +19,7 @@ spring:
        show_sql: true
        naming: 
          physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
-
+spring.db.datajson.upload: true
 # Discovery Server Access
 eureka:
    client:
@@ -57,7 +57,7 @@ spring:
        show_sql: true
        naming: 
          physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
-
+spring.db.datajson.upload: true
 # Discovery Server Access
 eureka:
     client:

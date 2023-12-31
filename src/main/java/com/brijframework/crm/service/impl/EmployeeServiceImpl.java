@@ -6,6 +6,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.brijframework.crm.contants.RecordStatus;
 import com.brijframework.crm.dto.UIEmployee;
 import com.brijframework.crm.dto.UIEmployeeDetail;
 import com.brijframework.crm.entities.EOCustBusinessApp;
@@ -53,7 +54,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 	@Override
 	public boolean deleteEmployee(Long id) {
 		EOEmployee eoEmployee = employeeRepository.findById(id).orElseThrow(()-> new RuntimeException("Not fond")) ;
-		eoEmployee.setRecordState(false);
+		eoEmployee.setRecordState(RecordStatus.DACTIVETED.getStatus());
 		employeeRepository.save(eoEmployee);
 		return true;
 	}
