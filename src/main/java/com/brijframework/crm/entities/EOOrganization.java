@@ -14,8 +14,8 @@ import javax.persistence.UniqueConstraint;
 
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
-@Table(name = EOBUSINESS, uniqueConstraints = { @UniqueConstraint(columnNames = { NAME, VENDOR_ID }) })
-public class EOBusiness extends EOEntityObject {
+@Table(name = EOORGANIZATION, uniqueConstraints = { @UniqueConstraint(columnNames = { NAME, VENDOR_ID }) })
+public class EOOrganization extends EOEntityObject {
 
 	/**
 	 * 
@@ -52,10 +52,6 @@ public class EOBusiness extends EOEntityObject {
 	@JoinColumn(name = VENDOR_ID)
 	@ManyToOne
 	private EOVendor vendor;
-	
-	@JoinColumn(name = ORGANIZATION_ID)
-	@ManyToOne
-	private EOOrganization organization;
 	
 	@JoinColumn(name = COUNTRY_ID)
 	@ManyToOne
@@ -132,13 +128,6 @@ public class EOBusiness extends EOEntityObject {
 	public void setCountry(EOGlobalCountry country) {
 		this.country = country;
 	}
-
-	public EOOrganization getOrganization() {
-		return organization;
-	}
-
-	public void setOrganization(EOOrganization organization) {
-		this.organization = organization;
-	}
+	
 	
 }

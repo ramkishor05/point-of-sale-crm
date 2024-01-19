@@ -15,7 +15,9 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
+import javax.persistence.JoinColumn;
 import javax.persistence.Lob;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -23,6 +25,10 @@ import javax.persistence.Table;
 @Inheritance(strategy = InheritanceType.JOINED)
 @Table(name = EOVENDOR)
 public class EOVendor extends EOCrmObject {
+
+	private static final String PARENT_VENDOR = "parentVendor";
+
+	private static final String PARENT_VENDOR_ID = "PARENT_VENDOR_ID";
 
 	/**
 	 * 
@@ -49,6 +55,10 @@ public class EOVendor extends EOCrmObject {
 	@Lob
 	private String presentAddress;
 	
+	@ManyToOne
+	@JoinColumn(name = PARENT_VENDOR_ID, nullable = true)
+	private EOVendor parentVendor;
+	
 	@OneToMany(mappedBy = VENDOR)
 	private List<EOEmployee> employeeList;
 	
@@ -60,6 +70,12 @@ public class EOVendor extends EOCrmObject {
 
 	@OneToMany(mappedBy = VENDOR)
 	private List<EOBusiness> businessList;
+	
+	@OneToMany(mappedBy = VENDOR)
+	private List<EOOrganization> organizationList;
+	
+	@OneToMany(mappedBy = PARENT_VENDOR)
+	private List<EOVendor> vendorList;
 	
 	public String getName() {
 		return name;
@@ -141,4 +157,27 @@ public class EOVendor extends EOCrmObject {
 		this.businessList = businessList;
 	}
 
+	public EOVendor getParentVendor() {
+		return parentVendor;
+	}
+
+	public void setParentVendor(EOVendor parentVendor) {
+		this.parentVendor = parentVendor;
+	}
+
+	public List<EOOrganization> getOrganizationList() {
+		return organizationList;
+	}
+
+	public void setOrganizationList(List<EOOrganization> organizationList) {
+		this.organizationList = organizationList;
+	}
+
+	public List<EOVendor> getVendorList() {
+		return vendorList;
+	}
+
+	public void setVendorList(List<EOVendor> vendorList) {
+		this.vendorList = vendorList;
+	}
 }

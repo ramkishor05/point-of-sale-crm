@@ -195,5 +195,8 @@ public class Constants {
 	public static final String BUSINESS_ID = "BUSINESS_ID";
 	public static final String CUST_BUSINESS_APP_ID = "CUST_BUSINESS_APP_ID";
 
+	public static final String EOORGANIZATION="EOORGANIZATION";
+	
+	public static final String ORGANIZATION_ID="ORGANIZATION_ID";
 
 }

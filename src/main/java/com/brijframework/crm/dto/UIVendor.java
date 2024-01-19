@@ -1,5 +1,7 @@
 package com.brijframework.crm.dto;
 
+import java.util.List;
+
 public class UIVendor extends UICrmObject{
 
 	private String phoneNumber;
@@ -11,6 +13,10 @@ public class UIVendor extends UICrmObject{
 	private String permamentAddress;
 
 	private String presentAddress;
+	
+	private Long parentVendorId;
+	
+	private List<UIVendor> vendorList;
 
 	public String getName() {
 		return name;
@@ -60,4 +66,19 @@ public class UIVendor extends UICrmObject{
 		this.presentAddress = presentAddress;
 	}
 
+	public Long getParentVendorId() {
+		return parentVendorId;
+	}
+
+	public void setParentVendorId(Long parentVendorId) {
+		this.parentVendorId = parentVendorId;
+	}
+
+	public List<UIVendor> getVendorList() {
+		return vendorList;
+	}
+
+	public void setVendorList(List<UIVendor> vendorList) {
+		this.vendorList = vendorList;
+	}
 }
