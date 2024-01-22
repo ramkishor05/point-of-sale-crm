@@ -30,6 +30,9 @@ public class VendorController {
 	
 	@PutMapping
 	public UIVendor updateVendor(@RequestBody UIVendor uiVendor) {
+		if(uiVendor.getId()==null) {
+			throw new RuntimeException("Invalid update request!!");
+		}
 		return vendorService.saveVendor(uiVendor);
 	}
 	

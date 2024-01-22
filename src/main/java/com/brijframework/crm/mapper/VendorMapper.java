@@ -17,30 +17,46 @@ public interface VendorMapper extends GenericMapper<EOVendor, UIVendor> {
 
 	@Override
 	@Mapping(source = "parentVendor.id", target = "parentVendorId")
-	public UIVendor mapToDTO(EOVendor eoRole);
+	public UIVendor mapToDTO(EOVendor eoVendor);
+	
+	public default EOVendor uIVendorToEOVendor(UIVendor uIVendor) {
+        if ( uIVendor == null || uIVendor.getParentVendorId() ==null || uIVendor.getParentVendorId()==0l) {
+            return null;
+        }
+
+        EOVendor eOVendor = new EOVendor();
+
+        eOVendor.setId( uIVendor.getParentVendorId() );
+
+        return eOVendor;
+    }
 
 	@Override
-	public default List<UIVendor> mapToDTO(List<EOVendor> eoRoleDTO) {
-		if (eoRoleDTO == null) {
+	public default List<UIVendor> mapToDTO(List<EOVendor> eoVendorList) {
+		if (eoVendorList == null || eoVendorList.isEmpty()) {
 			return null;
 		}
 
 		List<UIVendor> list = new ArrayList<UIVendor>();
-		for (EOVendor eOVendor : eoRoleDTO) {
+		for (EOVendor eOVendor : eoVendorList) {
 			list.add(mapToDTO(eOVendor));
 		}
 
 		return list;
 	}
+	
+	@Override
+	@Mapping(target = "parentVendor.id", source = "parentVendorId")
+	EOVendor mapToDAO(UIVendor eoObject);
 
 	@Override
-	public default List<EOVendor> mapToDAO(List<UIVendor> findAll) {
-		if (findAll == null) {
+	public default List<EOVendor> mapToDAO(List<UIVendor> uiVendorList) {
+		if (uiVendorList == null || uiVendorList.isEmpty()) {
 			return null;
 		}
 
 		List<EOVendor> list = new ArrayList<EOVendor>();
-		for (UIVendor uIVendor : findAll) {
+		for (UIVendor uIVendor : uiVendorList) {
 			list.add(mapToDAO(uIVendor));
 		}
 
