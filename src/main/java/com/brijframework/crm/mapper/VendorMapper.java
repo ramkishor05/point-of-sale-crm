@@ -18,18 +18,6 @@ public interface VendorMapper extends GenericMapper<EOVendor, UIVendor> {
 	@Override
 	@Mapping(source = "parentVendor.id", target = "parentVendorId")
 	public UIVendor mapToDTO(EOVendor eoVendor);
-	
-	public default EOVendor uIVendorToEOVendor(UIVendor uIVendor) {
-        if ( uIVendor == null || uIVendor.getParentVendorId() ==null || uIVendor.getParentVendorId()==0l) {
-            return null;
-        }
-
-        EOVendor eOVendor = new EOVendor();
-
-        eOVendor.setId( uIVendor.getParentVendorId() );
-
-        return eOVendor;
-    }
 
 	@Override
 	public default List<UIVendor> mapToDTO(List<EOVendor> eoVendorList) {
