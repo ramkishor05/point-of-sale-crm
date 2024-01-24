@@ -1,5 +1,6 @@
 spring:
-   profiles: aws_rds
+   profiles:  
+     active: aws_rds
    application:
      name: point_of_sale_crm
    main:
@@ -7,9 +8,9 @@ spring:
    sql.init.mode: always
    datasource:
      driverClassName: com.mysql.cj.jdbc.Driver
-     url: jdbc:mysql://pointofsale.cjajb4uwr0of.us-east-1.rds.amazonaws.com:3306/point_of_sale_crm
-     username: admin
-     password: admin123
+     url: jdbc:mysql://sql6.freesqldatabase.com:3306/sql6679474
+     username: sql6679474
+     password: hbV9nAtZAU
      show-sql: true
    jpa: 
      hibernate: 
@@ -36,8 +37,7 @@ error:
     enabled: true
 ---
 spring:
-   profiles: 
-     active: local
+   profiles: local
    application:
      name: point_of_sale_crm
    main:
