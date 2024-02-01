@@ -1,6 +1,5 @@
 spring:
-   profiles:  
-     active: aws_rds
+   profiles: aws_rds
    application:
      name: point_of_sale_crm
    main:
@@ -37,7 +36,8 @@ error:
     enabled: true
 ---
 spring:
-   profiles: local
+   profiles:  
+     active: local
    application:
      name: point_of_sale_crm
    main:

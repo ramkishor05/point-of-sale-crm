@@ -5,15 +5,13 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<parent>
-		<groupId>org.springframework.boot</groupId>
-		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.2.4.RELEASE</version>
-		<relativePath /> <!-- lookup parent from repository -->
+		<groupId>com.brijframework</groupId>
+		<artifactId>point-of-sale-api</artifactId>
+		<version>1.1</version>
+		<relativePath />
 	</parent>
 
-	<groupId>com.brijframework</groupId>
-	<artifactId>project-brijframework-crm</artifactId>
-	<version>1.0.1</version>
+	<artifactId>point-of-sale-crm</artifactId>
 	<packaging>jar</packaging>
 
 	<properties>
