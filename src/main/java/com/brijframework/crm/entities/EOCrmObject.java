@@ -2,8 +2,8 @@ package com.brijframework.crm.entities;
 
 import static com.brijframework.crm.contants.Constants.*;
 
-import javax.persistence.Column;
-import javax.persistence.MappedSuperclass;
+import jakarta.persistence.Column;
+import jakarta.persistence.MappedSuperclass;
 
 @MappedSuperclass
 public abstract class EOCrmObject extends EOEntityObject {

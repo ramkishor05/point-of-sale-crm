@@ -2,9 +2,9 @@ package com.brijframework.crm.entities;
 
 import static com.brijframework.crm.contants.Constants.ACTIVE;
 
-import javax.persistence.Column;
-import javax.persistence.MappedSuperclass;
-import javax.persistence.PrePersist;
+import jakarta.persistence.Column;
+import jakarta.persistence.MappedSuperclass;
+import jakarta.persistence.PrePersist;
 
 @MappedSuperclass
 public abstract class EOCustObject extends EOEntityObject {
